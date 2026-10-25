@@ -9,6 +9,7 @@ A dark Electron desktop shell for Fireball, with a Python helper status check an
 - Python helper status check
 - Placeholder navigation for Installations, and Mods
 - Electron security defaults: context isolation, disabled renderer Node integration, preload IPC bridge, restrictive Content Security Policy
+- Working Settings (NEW!)
 
 ## Not implemented
 - Minecraft/Microsoft authentication
