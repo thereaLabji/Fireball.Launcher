@@ -7,7 +7,7 @@ A dark Electron desktop shell for Fireball, with a Python helper status check an
 - Fireball project status panel
 - PLAY button explains that gameplay launch is unavailable
 - Python helper status check
-- Placeholder navigation for Installations, Mods, and Settings
+- Placeholder navigation for Installations, and Mods
 - Electron security defaults: context isolation, disabled renderer Node integration, preload IPC bridge, restrictive Content Security Policy
 
 ## Not implemented
