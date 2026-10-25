@@ -1,0 +1,9 @@
+{
+  "name": "fireball-launcher",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Experimental desktop launcher shell for Fireball",
+  "main": "src/main.js",
+  "scripts": {"start": "electron ."},
+  "devDependencies": {"electron": "^35.0.0"}
+}

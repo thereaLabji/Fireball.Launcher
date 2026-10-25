@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self';">
+  <title>Fireball Launcher</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="mark"><i></i><i></i><i></i></div><div><b>FIREBALL</b><small>DEVELOPMENT CLIENT</small></div></div>
+    <nav>
+      <button class="nav active" data-page="Home">⌂ <span>Home</span></button>
+      <button class="nav" data-page="Installations">▤ <span>Installations</span><em>SOON</em></button>
+      <button class="nav" data-page="Mods">◇ <span>Mods</span><em>SOON</em></button>
+      <button class="nav" data-page="Settings">⚙ <span>Settings</span></button>
+    </nav>
+    <div class="side-bottom"><div><i class="dot amber"></i> EARLY DEVELOPMENT</div><small>LAUNCHER v0.1.0</small></div>
+  </aside>
+  <main>
+    <header><div>FIREBALL <b>/</b> <strong>HOME</strong></div><span><i class="dot green"></i> LOCAL INSTANCE</span></header>
+    <section class="page" id="page-home">
+      <div class="grid"></div><div class="hero-copy">
+        <div class="eyebrow"><i></i> YOUR GAME. YOUR RULES.</div>
+        <h1>Enter the<br><span>Fireball</span> universe.</h1>
+        <p>One place to manage your Fireball installation.<br>Built for experimentation. Designed for what comes next.</p>
+        <div class="actions">
+          <button id="play"><b class="triangle"></b><span><strong>PLAY</strong><small>GAME LAUNCH UNAVAILABLE</small></span></button>
+          <div class="profile"><small>PROFILE</small><b>Fireball Dev</b><hr><small>VERSION</small><b>Not configured</b></div>
+        </div>
+        <div id="play-message" role="status"></div>
+      </div>
+      <div class="orb" aria-hidden="true"><div class="orbit one"></div><div class="orbit two"></div><div class="core"><i></i></div><label>FB / CORE</label><small>RUNTIME BRIDGE <b>OFFLINE</b></small></div>
+      <footer><span>FIREBALL PROJECT</span><span>BUILD YOUR OWN WAY <b>↗</b></span></footer>
+    </section>
+    <section class="cards">
+      <article class="panel"><div class="kicker">PROJECT STATUS</div><h2>Development overview</h2>
+        <div class="status"><i class="check">✓</i><span>Mod loader</span><b class="good">WORKING</b></div>
+        <div class="status"><i class="check">✓</i><span>Fireball API</span><b class="good">WORKING</b></div>
+        <div class="status"><i class="pending">◷</i><span>Server build</span><b class="warn">IN DEVELOPMENT</b></div>
+        <div class="status"><i class="pending">◷</i><span>Minecraft bridge</span><b class="warn">IN DEVELOPMENT</b></div>
+        <p class="note">Project statuses are manually documented, not automated tests.</p>
+      </article>
+      <article class="panel"><div class="kicker">LOCAL ENVIRONMENT</div><h2>System check</h2>
+        <div class="system"><span>Launcher shell</span><b><i class="dot green"></i> ONLINE</b></div>
+        <div class="system"><span>Python helper</span><b id="python-status"><i class="dot"></i> CHECKING</b></div>
+        <div class="system"><span>Game runtime</span><b><i class="dot amber"></i> NOT READY</b></div>
+        <button id="refresh">↻ &nbsp; Refresh system check</button>
+      </article>
+    </section>
+    
+    
+    <div class="app-footer"><span>FIREBALL LAUNCHER <b>0.1.0</b></span><span>EXPERIMENTAL SOFTWARE · NOT A RELEASE BUILD</span></div>
+
+    <!-- SETTINGS PAGE: inserted after the Home content -->
+    <section class="page settings-page" id="page-settings" hidden>
+      <div class="settings-heading">
+        <div class="eyebrow"><i></i> CONFIGURATION</div>
+        <h1>Launcher <span>Settings</span></h1>
+        <p>Configure your game paths and runtime preferences.</p>
+      </div>
+
+      <article class="panel settings-panel">
+        <div class="kicker">GAME CONFIGURATION</div>
+        <h2>Game directory</h2>
+        <p class="note">The folder where your Minecraft installation and game files are stored.</p>
+
+        <div class="setting-field">
+          <label for="game-directory">Game directory path</label>
+          <div class="field-row">
+            <input id="game-directory" type="text" placeholder="Select a game directory..." spellcheck="false">
+            <button id="pick-directory" type="button">Browse</button>
+          </div>
+        </div>
+
+        <div class="setting-field">
+          <label for="java-path">Java executable</label>
+          <div class="field-row">
+            <input id="java-path" type="text" placeholder="Auto-detect Java..." spellcheck="false">
+            <button id="pick-java" type="button">Browse</button>
+            <button id="detect-java" type="button">Detect</button>
+          </div>
+          <p class="note">A compatible Java version will be required to launch the game.</p>
+        </div>
+      </article>
+
+      <article class="panel settings-panel">
+        <div class="kicker">PERFORMANCE</div>
+        <h2>Memory allocation</h2>
+        <p class="note">Configure how much RAM the game may use. These settings do not launch the game yet.</p>
+
+        <div class="memory-grid">
+          <div class="setting-field">
+            <label for="min-memory">Minimum memory (MB)</label>
+            <input id="min-memory" type="number" min="512" max="65536" step="512" value="2048">
+          </div>
+          <div class="setting-field">
+            <label for="max-memory">Maximum memory (MB)</label>
+            <input id="max-memory" type="number" min="512" max="65536" step="512" value="4096">
+          </div>
+        </div>
+      </article>
+
+      <article class="panel settings-panel">
+        <div class="kicker">PREFERENCES</div>
+        <h2>Launcher behavior</h2>
+
+        <label class="setting-toggle">
+          <span><b>Check for updates</b><small>Allow the launcher to check for newer releases.</small></span>
+          <input id="check-updates" type="checkbox" checked>
+        </label>
+
+        <label class="setting-toggle">
+          <span><b>Development mode</b><small>Enable options intended for testing and development.</small></span>
+          <input id="development-mode" type="checkbox" checked>
+        </label>
+      </article>
+
+      <div class="settings-actions">
+        <button id="reset-settings" type="button">Reset defaults</button>
+        <button id="save-settings" type="button" class="primary-button">Save settings</button>
+      </div>
+    </section>
+  </main>
+</div>
+<div id="toast" role="status"></div>
+<script src="./app.js"></script>
+</body>
+</html>
+
