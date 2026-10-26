@@ -23,7 +23,7 @@ The PLAY button deliberately does not start Minecraft: the Fireball runtime brid
 ## Requirements
 - Node.js 20+ recommended
 - npm
-- Python 3.10+ optional (needed for the local helper status check)
+- Python 3.12+ optional (needed for the local helper status check)
 
 ## Run on Windows
 Open PowerShell in this folder:
